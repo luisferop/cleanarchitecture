@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchMVC.Domain.Entities;
 
 namespace CleanArchMVC.Domain.Interfaces
 {
-    internal interface ICategoryRepository
+    public interface ICategoryRepository
     {
+        Task<IEnumerable<Category>> GetCategoriesAsync();
+        Task<Category> GetCategoryByIdAsync(int id);
+        Task<Category> AddAsync(Category category);
+        Task<Category> UpdateAsync(Category category);
+        Task<Category> RemoveAsync(Category category);
     }
+
 }

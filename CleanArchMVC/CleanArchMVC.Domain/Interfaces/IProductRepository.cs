@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchMVC.Domain.Entities;
 
 namespace CleanArchMVC.Domain.Interfaces
 {
-    internal interface IProductRepository
+    public interface IProductRepository
     {
+        Task<IEnumerable<Product>> GetProductsAsync();
+        Task<IEnumerable<Product>> GetProductsByCategoryAsync(int idCategory);
+        Task<Product> GetProductByIdAsync(int id);
+        Task<Product> AddAsync(Product product);
+        Task<Product> UpdateAsync(Product product);
+        Task<Product> RemoveAsync(Product product);
     }
 }
